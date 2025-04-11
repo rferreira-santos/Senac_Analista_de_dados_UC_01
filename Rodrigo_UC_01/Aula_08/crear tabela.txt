@@ -1,0 +1,7 @@
+CREATE TABLE Alunos(
+    matricula integer NOT NULL,
+    nome varchar (30) NOT NULL,
+    endereco varchar(50) NOT NULL,
+    telefone varchar(14) NOT NULL,
+    PRIMARY KEY(matricula)
+    );

@@ -1,0 +1,13 @@
+CREATE TABLE emprestimo(
+    id_emprestimo integer AUTO_INCREMENT,
+    numero_pedido integer NOT NULL,
+    data_emprestimo DATE NOT NULL,
+    data_devolucao DATE NOT NULL,
+    isbn integer NOT NULL,
+    matricula integer NOT NULL,
+    siape integer NOT NULL,
+    PRIMARY KEY (id_emprestimo),
+    FOREIGN KEY (isbn) REFERENCES livros(isbn),
+    FOREIGN KEY (matricula) REFERENCES alunos(matricula),
+    FOREIGN KEY (siape) REFERENCES funcionarios(siape)
+    );
