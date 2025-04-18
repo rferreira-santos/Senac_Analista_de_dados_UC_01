@@ -1,0 +1,44 @@
+SELECT nome_completo,telefone,email
+from alunos
+
+
+
+
+SELECT A.nome_completo, m.data_matricula_turma 
+from alunos A 
+INNER JOIN matriculas M 
+ON a.id_aluno = m.id_turma;
+
+---------------------------------------------------------------------
+SELECT A.nome_completo, m.data_matricula_turma, t.nome_turma
+from alunos A 
+INNER JOIN matriculas M 
+ON a.id_aluno = m.id_turma
+INNER JOIN turmas T 
+ON M.id_turma = T.id_turma
+
+---------------------------------------------------------------------
+SELECT A.nome_completo, m.data_matricula_turma, t.nome_turma
+from alunos A 
+INNER JOIN matriculas M 
+ON a.id_aluno = m.id_turma
+INNER JOIN turmas T 
+ON M.id_turma = T.id_turma
+
+---------------------------------------------------------------------
+SELECT P.nome_completo, D.nome_disciplina
+from professores P
+INNER JOIN professores_disciplinas PD
+ON P.id_professor = PD.id_professor
+INNER JOIN disciplinas D   
+ON P.id_professor = D.id_disciplina
+
+---------------------------------------------------------------------
+
+SELECT A.nome_completo, D.nome_disciplina, N.nota
+from alunos A 
+INNER JOIN disciplinas D 
+ON a.id_aluno = d.id_disciplina
+INNER JOIN notas N 
+on d.id_disciplina = n.id_nota
+WHERE nota >=9.0 
